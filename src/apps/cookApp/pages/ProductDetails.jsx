@@ -8,19 +8,13 @@ function ProductDetails() {
   const [productDetails, setProductDetails] = useState({});
 
   const getProductDetails = async () => {
-    // const check = localStorage.getItem('productDetails');
-    // if (check) {
-    //   setProductDetails(JSON.parse(check));
-    // } else {
       const api = await fetch(`https://api.spoonacular.com/recipes/${params.id}/information?apiKey=01413253735042a88adb7b85f4b69403`)
       const data = await api.json();
       if (data.status === 'failure') {
-        navigate('/FoodApp/redirect');
+        navigate('/redirect');
       } else {
         setProductDetails(data);
       }
-      // localStorage.setItem('productDetails', JSON.stringify(data));
-    // }
   }
   useEffect(()=>{
     getProductDetails();

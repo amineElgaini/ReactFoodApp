@@ -16,7 +16,7 @@ function Popular() {
         const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=01413253735042a88adb7b85f4b69403&number=9`)
         const data = await api.json();
         if (data.status === 'failure') {
-          navigate('/FoodApp/redirect');
+          navigate('/redirect');
         } else {
           setPopular(data.recipes);
         }
@@ -51,7 +51,7 @@ function Popular() {
         {popular.map((recipe, i)=>{
           return (
             <SplideSlide key={i}>
-              <Link key={i} to={`/FoodApp/ProductDetails/${recipe.id}`}>
+              <Link key={i} to={`/ProductDetails/${recipe.id}`}>
                 <ProductCard product={recipe}/>
               </Link>
             </SplideSlide>
