@@ -8,7 +8,7 @@ function ProductDetails() {
   const [productDetails, setProductDetails] = useState({});
 
   const getProductDetails = async () => {
-      const api = await fetch(`https://api.spoonacular.com/recipes/${params.id}/information?apiKey=01413253735042a88adb7b85f4b69403`)
+      const api = await fetch(`https://api.spoonacular.com/recipes/${params.id}/information?apiKey=2435674dd1d9434fb3b306d82e24f624`)
       const data = await api.json();
       if (data.status === 'failure') {
         navigate('/redirect');
