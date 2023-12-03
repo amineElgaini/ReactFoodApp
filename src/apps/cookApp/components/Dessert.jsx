@@ -13,7 +13,7 @@ function Dessert() {
     // if (check) {
     //   setPopular(JSON.parse(check));
     // } else {
-      const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=01413253735042a88adb7b85f4b69403&number=9&tags=dessert`)
+      const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=2435674dd1d9434fb3b306d82e24f624&number=9&tags=dessert`)
       const data = await api.json();
       if (data.status === 'failure') {
         navigate('/redirect');
